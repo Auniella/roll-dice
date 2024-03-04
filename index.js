@@ -18,7 +18,6 @@ function updateHistory() {
     const listItem = document.createElement("li");
     listItem.innerHTML = `Tour ${i + 1} : <span>${getDice(history[i])}</span>`;
     list.appendChild(listItem);
-    console.log(i);
   }
 }
 
@@ -50,9 +49,9 @@ function rouler() {
     diceDisplayed.classList.remove("go");
     audio.pause();
     audio.currentTime = 0;
+    displayDice();
   }, 1000);
 }
 lancer.addEventListener("click", () => {
   rouler();
-  displayDice();
 });
